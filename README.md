@@ -1,41 +1,43 @@
 #  IchtyoScope
 
-**FR — Plateforme analytique multi-années pour les statistiques de pêche**
+[ Voir la vitrine IchtyoScope](https://charles-t-sys.github.io/IchtyoScope/)
 
-IchtyoScope est une plateforme d’analyse et de visualisation dédiée aux données halieutiques (1994–aujourd’hui).  
-Elle appuie la **gestion intégrée des territoires fauniques** par l’analyse des captures, de l’effort, de la biomasse et des tendances multi-années.  
+IchtyoScope est une **plateforme analytique et de visualisation multi-années** dédiée aux statistiques de pêche (1994–aujourd’hui).  
+Elle appuie la **gestion intégrée des territoires fauniques** à travers l’analyse des captures, de l’effort, de la biomasse et des tendances long terme.
 
-Les **connaissances scientifiques** y sont intégrées, avec des modules de **statistiques avancées** pour :  
-- évaluer les effets des **changements réglementaires** sur les populations,  
-- suivre la performance des **ensemencements**,  
-- offrir une **vision par bassins versants** pour la prise de décision.  
+##  Caractéristiques principales
 
- **[Consulter la vitrine en ligne (GitHub Pages)](https://charles-t-sys.github.io/IchtyoScope/)**  
+- Analyse multi-indicateurs (captures, effort, biomasse, succès, poids moyen, kg/ha, etc.)
+- 🔎 Modules de statistiques avancées :
+  - Effets des **changements réglementaires** sur les populations
+  - Suivi des **ensemencements**
+  - Vision par **bassins versants** pour la prise de décision
+-  Tableaux et graphiques interactifs
+-  Exports en PDF/Excel
+-  Intégration des données historiques (1994–2017) et récentes (2018+)
+
+## Aperçu visuel
+
+Exemples d’analyses générées par IchtyoScope :
+
+<p align="center">
+  <img src="docs/sc1.png" alt="Capture IchtyoScope 1" width="45%">
+  <img src="docs/sc2.png" alt="Capture IchtyoScope 2" width="45%"><br>
+  <img src="docs/sc3.png" alt="Capture IchtyoScope 3" width="45%">
+  <img src="docs/sc4.png" alt="Capture IchtyoScope 4" width="45%"><br>
+  <img src="docs/sc5.png" alt="Capture IchtyoScope 5" width="70%">
+</p>
+
+## Structure
+
+- `app.py` → Application Streamlit principale  
+- `modules/` → Modules analytiques (résumé annuel, variabilité journalière, corrélations, etc.)  
+- `data/` → Fichiers de statistiques (historique et récents)  
+- `docs/` → Site vitrine GitHub Pages  
+
+## Auteur
+
+Développement : **Charles Tremblay, biologiste**  
+[🔗 Profil GitHub](https://github.com/Charles-T-sys)  
 
 ---
-
-**EN — Multi-year analytical platform for fisheries statistics**
-
-IchtyoScope is an analytical and visualization platform dedicated to fishery data (1994–present).  
-It supports **integrated wildlife territory management** through the analysis of catches, effort, biomass, and multi-year trends.  
-
-The system integrates **scientific knowledge** and provides **advanced statistical modules** to:  
-- assess the impact of **regulatory changes** on fish populations,  
-- monitor the effectiveness of **stocking programs**,  
-- deliver a **watershed-based perspective** for decision making.  
-
- **[Visit the online showcase (GitHub Pages)](https://charles-t-sys.github.io/IchtyoScope/)**  
-
----
-
-## ⚙️ Core Features / Fonctionnalités principales
--  Annual summaries / **Résumés annuels**  
--  Daily variability / **Variabilité journalière**  
--  Correlation analysis / **Corrélations multi-indicateurs**  
--  Rankings / **Palmarès**  
--  Thresholds & alerts / **Seuils et alertes**  
--  Institutional reports / **Rapports institutionnels automatisés**  
-
----
-
-© 2025 — Développement / Development: **Charles Tremblay, biologiste**
