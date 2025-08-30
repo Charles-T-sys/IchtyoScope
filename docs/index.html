@@ -40,8 +40,14 @@
     .screenshot {
       text-align: center;
     }
-    .screenshot img {
-      max-width: 100%;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    .gallery img {
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -103,8 +109,14 @@
 
     <section class="screenshot">
       <h2>📊 Aperçu visuel</h2>
-      <p>Exemple d’analyse générée par IchtyoScope :</p>
-      <img src="https://raw.githubusercontent.com/Charles-T-sys/IchtyoScope/main/docs/s5.png" alt="Capture d’écran IchtyoScope" width="600">
+      <p>Exemples d’analyses générées par IchtyoScope :</p>
+      <div class="gallery">
+        <img src="sc1.png" alt="Capture IchtyoScope 1">
+        <img src="sc2.png" alt="Capture IchtyoScope 2">
+        <img src="sc3.png" alt="Capture IchtyoScope 3">
+        <img src="sc4.png" alt="Capture IchtyoScope 4">
+        <img src="sc5.png" alt="Capture IchtyoScope 5">
+      </div>
     </section>
   </main>
 
