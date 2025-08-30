@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IchtyoScope — Plateforme analytique multi-années</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
   <style>
     body {
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -34,12 +35,26 @@
     h1, h2 {
       color: #004466;
     }
+    .screenshot {
+      text-align: center;
+    }
+    .screenshot img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
     footer {
       background: #eee;
       color: #666;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+    }
+    footer a {
+      color: #004466;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -83,10 +98,17 @@
         <li>deliver a <strong>watershed-based perspective</strong> for decision making.</li>
       </ul>
     </section>
+
+    <section class="screenshot">
+      <h2>📊 Aperçu visuel</h2>
+      <p>Exemple d’analyse générée par IchtyoScope :</p>
+      <img src="screenshot.png" alt="Capture d’écran IchtyoScope">
+    </section>
   </main>
 
   <footer>
-    © 2025 — Développement / Development: Charles Tremblay, biologiste
+    © 2025 — Développement / Development: Charles Tremblay, biologiste · 
+    <a href="https://github.com/Charles-T-sys/IchtyoScope" target="_blank">Code source sur GitHub</a>
   </footer>
 
 </body>
