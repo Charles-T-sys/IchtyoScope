@@ -12,7 +12,7 @@ Elle appuie la **gestion intégrée des territoires fauniques** grâce à l’an
 - **Analyse multi-indicateurs** : captures, effort, biomasse, succès, poids moyen, kg/ha, taux de remise, nombre de groupes.  
 - **Modules avancés** :  
   -  Statistiques inférentielles (tests, ANOVA multifactorielle).  
-  -  Effets des changements réglementaires (quotas, règlements « mouche seule »).  
+  -  Effets des changements réglementaires (quotas, règlements, engins de pêche exclusifs).  
   -  Détection des seuils critiques et alertes (succès, biomasse, effort, taux de remise).  
   -  Comparatif multi-lacs et vision par bassins versants.  
   -  Suivi des ensemencements et taux de retour.  
