@@ -32,7 +32,7 @@ Exemples d’analyses générées par IchtyoScope :
   <img src="docs/sc1.png" alt="Capture IchtyoScope 1" width="45%">
   <img src="docs/sc2.png" alt="Capture IchtyoScope 2" width="45%"><br>
   <img src="docs/sc3.png" alt="Capture IchtyoScope 3" width="45%">
-  <img src="docs/sc4.png" alt="Capture IchtyoScope 4" width="45%"><br>
+  <img src="docs/sc4.jpg" alt="Capture IchtyoScope 4" width="45%"><br>
   <img src="docs/sc5.png" alt="Capture IchtyoScope 5" width="70%">
 </p>
 
