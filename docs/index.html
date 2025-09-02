@@ -3,148 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IchtyoScope — Plateforme analytique multi-années</title>
+  <title>IchtyoScope — Plateforme analytique pour la gestion faunique</title>
+
+  <!-- Meta description / partage -->
+  <meta name="description" content="IchtyoScope est une plateforme analytique interactive pour la gestion intégrée des territoires fauniques : analyses multi-indicateurs, impacts réglementaires, ensemencements, exports institutionnels.">
+  <meta property="og:title" content="IchtyoScope — Plateforme analytique">
+  <meta property="og:description" content="Plateforme analytique et décisionnelle pour la gestion faunique.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="sc1.png">
+
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/x-icon" href="favicon-64.ico" sizes="64x64">
+
   <style>
-    body {
+    :root{
+      --bg:#f7f9fb;
+      --surface:#ffffff;
+      --ink:#1b2a41;
+      --muted:#516981;
+      --primary:#0b5fa5;
+      --primary-ink:#073b66;
+      --accent:#cfdfe6;
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f8f9fa;
-      color: #333;
+      line-height:1.6;
+      color:var(--ink);
+      background:var(--bg);
     }
-    header {
-      background: #cfdfe6;
-      color: #00334d;
-      padding: 2rem 1rem;
-      text-align: center;
+
+    /* Header héro */
+    header{
+      background: linear-gradient(135deg, #e6f0f5 0%, #cfdfe6 100%);
+      color:var(--primary-ink);
+      padding:3.2rem 1rem 2.6rem;
+      text-align:center;
+      border-bottom:1px solid #e6eef3;
     }
-    header img {
-      max-height: 100px;
-      margin-bottom: 1rem;
+    header .brand{
+      display:flex; flex-direction:column; align-items:center; gap:.75rem;
+      max-width:980px; margin:0 auto;
     }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    header img.logo{
+      max-height:90px; width:auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.1));
     }
-    section {
-      margin-bottom: 2.5rem;
+    header h1{
+      margin:.2rem 0 0;
+      font-size:2.1rem; letter-spacing:.2px;
     }
-    h1, h2 {
-      color: #004466;
+    header p.tagline{
+      margin:.4rem 0 0;
+      color:#234a66;
+      font-size:1.05rem;
     }
-    .screenshot {
-      text-align: center;
+    .cta-row{
+      margin-top:1.1rem; display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap;
     }
-    .gallery {
-      display: grid;
+    .btn{
+      display:inline-block;
+      padding:.65rem 1rem;
+      border-radius:999px;
+      text-decoration:none; font-weight:600; font-size:.98rem;
+      box-shadow: var(--shadow);
+      transition: transform .06s ease, box-shadow .2s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow:0 10px 26px rgba(0,0,0,.12) }
+    .btn.primary{ background:var(--primary); color:#fff }
+    .btn.ghost{ background:#eaf2f7; color:var(--primary-ink); border:1px solid #d6e2ea }
+
+    /* Contenu */
+    main{ max-width:980px; margin:2rem auto; padding:0 1rem }
+    section{ background:var(--surface); padding:1.25rem 1.2rem; margin-bottom:1.1rem; border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid #edf2f6 }
+    h2{ color:var(--primary-ink); margin:0 0 .6rem; font-size:1.35rem }
+    p{ margin:.5rem 0 }
+    ul{ margin:.4rem 0 .2rem 1.1rem }
+    li{ margin:.25rem 0 }
+    .muted{ color:var(--muted) }
+
+    /* Galerie */
+    .screenshot h2{ margin-bottom:.2rem }
+    .gallery{
+      display:grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 1rem;
+      gap:14px; margin-top:.6rem;
     }
-    .gallery img {
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .gallery figure{
+      margin:0; background:#f9fbfd; border:1px solid #e7edf3; border-radius:8px; overflow:hidden;
+      box-shadow: var(--shadow);
     }
-    footer {
-      background: #eee;
-      color: #444;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+    .gallery img{
+      display:block; width:100%; height:auto;
     }
-    footer a {
-      color: #004466;
-      text-decoration: none;
-      font-weight: bold;
+    .gallery figcaption{
+      padding:.5rem .75rem; font-size:.9rem; color:#516981; background:#fff;
+      border-top:1px solid #eef3f7;
+    }
+
+    /* Footer */
+    footer{
+      text-align:center; color:#4d5f73;
+      padding:1.6rem .8rem 2rem; font-size:.95rem;
+    }
+    footer a{ color:var(--primary); font-weight:700; text-decoration:none }
+    footer a:hover{ text-decoration:underline }
+
+    /* Responsive */
+    @media (max-width:520px){
+      header h1{ font-size:1.7rem }
+      .btn{ width:100%; text-align:center }
+      section{ padding:1rem .9rem }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="IchtyoScope Logo">
-    <h1>IchtyoScope</h1>
-    <p><em>Plateforme analytique multi-années pour la gestion intégrée des territoires fauniques</em></p>
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="Logo IchtyoScope">
+      <h1>IchtyoScope</h1>
+      <p class="tagline"><em>Plateforme analytique interactive pour la gestion intégrée des territoires fauniques</em></p>
+
+      <div class="cta-row" role="group" aria-label="Liens principaux">
+        <!-- Si la vitrine est cette page, conserve plutôt le lien GitHub et, au besoin, un lien vers une démo Streamlit si disponible -->
+        <a class="btn primary" href="https://github.com/Charles-T-sys/IchtyoScope" target="_blank" rel="noopener">Voir le code sur GitHub</a>
+        <a class="btn ghost" href="README.html" target="_blank" rel="noopener">Résumé (README)</a>
+      </div>
+    </div>
   </header>
 
   <main>
     <section>
       <h2>🇫🇷 Présentation</h2>
       <p>
-        IchtyoScope n’est pas une simple application de statistiques. 
-        C’est une <strong>plateforme scientifique intégrée</strong> qui relie la biologie, 
-        la gestion faunique et l’analytique moderne pour transformer des données brutes 
-        en <strong>informations stratégiques</strong>.
+        IchtyoScope est une <strong>plateforme analytique interactive</strong> qui relie la biologie, 
+        la gestion faunique et l’analytique moderne pour transformer des données de pêche en 
+        <strong>indicateurs stratégiques</strong>.
       </p>
       <p>
-        En consolidant plus de 30 ans de données halieutiques, 
-        IchtyoScope permet d’identifier les signaux faibles, 
-        de quantifier l’impact des mesures de gestion et de soutenir 
-        une <strong>décision basée sur la science</strong>.
+        En intégrant des séries historiques et des données récentes, l’application met en lumière les tendances, 
+        mesure l’impact des mesures de gestion et soutient une <strong>décision basée sur la science</strong>.
+      </p>
+      <p class="muted">
+        Interface sobre (bleu/gris), hiérarchie visuelle claire, exports institutionnels et navigation vers des analyses détaillées.
       </p>
     </section>
 
     <section>
       <h2>Caractéristiques principales</h2>
       <ul>
-        <li><strong>Analyse multi-indicateurs croisée</strong> : captures, effort, biomasse, succès, poids moyen, rendement (kg/ha), taux de remise.</li>
+        <li><strong>Analyse multi-indicateurs</strong> : captures, effort, biomasse (kg/ha), succès, poids moyen, taux de remise, nombre de groupes.</li>
         <li><strong>Statistiques avancées</strong> : régression linéaire, ANOVA multifactorielle, corrélations inter-indicateurs.</li>
-        <li><strong>Mesures d’impact réglementaire</strong> : simulation et validation de l’effet des quotas et restrictions (ex. mouche seule).</li>
-        <li><strong>Évaluation des ensemencements</strong> : suivi du taux de retour basé sur effort et captures, au-delà des moyennes simples.</li>
-        <li><strong>Vision spatiale</strong> : intégration des bassins versants et de la géomatique pour des décisions de gestion territoriale.</li>
-        <li><strong>Production scientifique</strong> : exports automatisés en PDF/Excel, prêts pour rapports officiels et présentations institutionnelles.</li>
+        <li><strong>Mesures d’impact réglementaire</strong> : évaluer l’effet de quotas et de restrictions (p. ex. engins de pêche exclusifs).</li>
+        <li><strong>Évaluation des ensemencements</strong> : suivi du taux de retour, volumes, souches et piscicultures.</li>
+        <li><strong>Vision spatiale</strong> : prise en compte des bassins versants et de la géomatique.</li>
+        <li><strong>Production scientifique</strong> : exports PDF/Excel et graphiques exportables pour rapports officiels.</li>
       </ul>
     </section>
 
     <section>
       <h2>Impact et portée</h2>
       <p>
-        IchtyoScope va au-delà des moyennes descriptives. 
-        Il s’impose comme un <strong>outil stratégique</strong> pour la gouvernance 
-        et la gestion durable des territoires fauniques :
+        Au-delà des moyennes descriptives, IchtyoScope est un <strong>outil d’aide à la décision</strong> pour la gouvernance et la gestion durable :
       </p>
       <ul>
-        <li><strong>Gestion adaptative</strong> : ajuster les quotas et règlements en fonction de résultats mesurés.</li>
-        <li><strong>Suivi longitudinal</strong> : comparer les cohortes historiques avec les tendances récentes.</li>
-        <li><strong>Outil de gouvernance</strong> : appuyer les discussions avec ministères, MRC et communautés locales.</li>
+        <li><strong>Gestion adaptative</strong> : ajuster quotas et règlements selon des résultats mesurés.</li>
+        <li><strong>Suivi longitudinal</strong> : relier tendances récentes et historiques pour détecter les signaux faibles.</li>
+        <li><strong>Transparence et redevabilité</strong> : indicateurs traçables, reproductibles et comparables.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Publics cibles</h2>
+      <ul>
+        <li>Directions de réserves fauniques, ZEC et pourvoiries</li>
+        <li>Ministères et organismes gouvernementaux</li>
+        <li>Universités et équipes de recherche</li>
+        <li>MRC et partenaires communautaires</li>
       </ul>
     </section>
 
     <section>
       <h2>🇬🇧 Overview</h2>
       <p>
-        IchtyoScope is an integrated <strong>scientific analytics platform</strong> for fishery management.  
-        By consolidating over 30 years of data, it provides <strong>evidence-based insights</strong> 
-        to guide regulations, assess stocking efficiency, and support long-term ecosystem governance.
+        IchtyoScope is an integrated <strong>analytics and decision-support platform</strong> for fishery management.  
+        By combining historical and recent records with advanced statistical modules, it delivers 
+        <strong>evidence-based insights</strong> to guide regulations, evaluate stocking performance, 
+        and support long-term ecosystem governance.
       </p>
     </section>
 
     <section class="screenshot">
       <h2>📊 Aperçu visuel</h2>
-      <p>Exemples d’analyses générées par IchtyoScope :</p>
-      <div class="gallery">
-        <img src="sc1.png" alt="Capture IchtyoScope 1">
-        <img src="sc2.png" alt="Capture IchtyoScope 2">
-        <img src="sc3.png" alt="Capture IchtyoScope 3">
-        <img src="sc4.jpg" alt="Capture IchtyoScope 4">
-        <img src="sc5.png" alt="Capture IchtyoScope 5">
-        <img src="sc6.png" alt="Capture IchtyoScope 6">
+      <p class="muted">Exemples d’analyses générées par IchtyoScope</p>
+      <div class="gallery" role="list">
+        <figure role="listitem">
+          <img src="sc1.png" alt="Résumé annuel — synthèse des indicateurs" loading="lazy">
+          <figcaption>Résumé annuel</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img src="sc2.png" alt="Variabilité journalière — effort et captures" loading="lazy">
+          <figcaption>Variabilité journalière</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img src="sc3.png" alt="Corrélations entre indicateurs" loading="lazy">
+          <figcaption>Corrélations</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img src="sc4.jpg" alt="Suivi des ensemencements" loading="lazy">
+          <figcaption>Ensemencements</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img src="sc5.png" alt="Alertes et seuils critiques" loading="lazy">
+          <figcaption>Alertes & seuils</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img src="sc6.png" alt="Rapports et exports institutionnels" loading="lazy">
+          <figcaption>Rapports & exports</figcaption>
+        </figure>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 — Développement : Charles Tremblay, biologiste.  
-    <br>
-    <a href="https://charles-t-sys.github.io/IchtyoScope/" target="_blank">Voir la vitrine IchtyoScope</a> · 
-    <a href="https://github.com/Charles-T-sys/IchtyoScope" target="_blank">Code source sur GitHub</a>
+    © 2025 — Développement : Charles Tremblay, biologiste.<br>
+    <a href="https://github.com/Charles-T-sys/IchtyoScope" target="_blank" rel="noopener">Code source</a> ·
+    <a href="README.html" target="_blank" rel="noopener">Résumé (README)</a>
   </footer>
 
 </body>
